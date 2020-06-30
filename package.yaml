@@ -1,0 +1,51 @@
+name:                Euklid-haskell
+version:             0.1.0.0
+github:              "bdcaf/Euklid-haskell"
+license:             BSD3
+author:              "Clemens Ager"
+maintainer:          "clemens.ager@gmail.com"
+copyright:           "2020 Clemens Ager"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Unspecified
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/bdcaf/Euklid-haskell#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+
+library:
+  source-dirs: src
+
+executables:
+  Euklid-haskell-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - Euklid-haskell
+
+tests:
+  Euklid-haskell-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - Euklid-haskell
+    - hspec
+    - hspec-core
+    - QuickCheck

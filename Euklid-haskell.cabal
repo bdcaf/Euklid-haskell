@@ -1,0 +1,66 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: e337d1721376c3054507a0146dfa4b826ca9086f28e15defe17d8a240ea8f2cf
+
+name:           Euklid-haskell
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/bdcaf/Euklid-haskell#readme>
+homepage:       https://github.com/bdcaf/Euklid-haskell#readme
+bug-reports:    https://github.com/bdcaf/Euklid-haskell/issues
+author:         Clemens Ager
+maintainer:     clemens.ager@gmail.com
+copyright:      2020 Clemens Ager
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/bdcaf/Euklid-haskell
+
+library
+  exposed-modules:
+      Lib
+  other-modules:
+      Paths_Euklid_haskell
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+  default-language: Haskell2010
+
+executable Euklid-haskell-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_Euklid_haskell
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      Euklid-haskell
+    , base >=4.7 && <5
+  default-language: Haskell2010
+
+test-suite Euklid-haskell-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      EuclidSpec
+      Paths_Euklid_haskell
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      Euklid-haskell
+    , QuickCheck
+    , base >=4.7 && <5
+    , hspec
+    , hspec-core
+  default-language: Haskell2010

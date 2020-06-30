@@ -37,10 +37,14 @@ spec = do
             prop_divisible
       it "bezout a*s+b*t = gcd" $ property $
             prop_bezout
+      it "recursive and iterative algorithm have same result" $ property $
+            prop_bezout
 
 prop_divisible a b = a>0 && b>0 ==> a `mod` d ==0 && b `mod`d == 0
   where EuclidRes d s t = extendedEuclid a b
                              
 prop_bezout a b = a>0 && b>0 ==> a*s + b*t == d
   where EuclidRes d s t = extendedEuclid a b
+
+prop_same_as_recursive a b = a>0 && b>0 ==> extendedEuclid a b == extendedEuclid' a b
                              

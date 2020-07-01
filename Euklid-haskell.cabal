@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: e337d1721376c3054507a0146dfa4b826ca9086f28e15defe17d8a240ea8f2cf
+-- hash: 043e93bd1a96b9631ced6a7dc212b96f32b392f651e3e5ad55a349ea4dbe790a
 
 name:           Euklid-haskell
 version:        0.1.0.0
@@ -52,6 +52,7 @@ test-suite Euklid-haskell-test
   type: exitcode-stdio-1.0
   main-is: Spec.hs
   other-modules:
+      EuclidMultiSpec
       EuclidSpec
       Paths_Euklid_haskell
   hs-source-dirs:

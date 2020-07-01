@@ -25,7 +25,7 @@ spec = do
        extendedEuclidMany [240,46] `shouldBe` Just ( toMany (EuclidRes 2 (-9) 47))
   describe "properties" $ do
       prop "multi algorithm needs to produce same result as the one on two." $ prop_same_as_recursive
-      prop "Example on lists" $ prop_same_as_recursive
+      prop "Check random input lists." $ prop_examples
 
 
 prop_examples :: [Positive Integer] -> Bool
@@ -42,4 +42,3 @@ prop_examples   as = case em of
 
 prop_same_as_recursive (Positive a) (Positive b) =  extendedEuclidMany [a,b] == Just ( toMany (extendedEuclid a b))
                              
-
